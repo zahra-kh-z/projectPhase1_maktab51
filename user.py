@@ -1,5 +1,10 @@
-import hashlib
+import csv
 import sys
+import pandas as pd
+import hashlib
+import logging
+
+logging.basicConfig(filename='my_file.log', format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
 
 class User:
@@ -7,6 +12,10 @@ class User:
         """
         :param username: name of user for login
         :param password: password of user for login
+        :param first_name: firs name for user
+        :param last_name: last name for user
+        :param email: email for user
+        :param address: address for user
         """
         self.username = username
         self.password = password
@@ -20,53 +29,75 @@ class User:
         """
         This method records user information as a manager or client. ----> Admin / Customer
         """
-        with open('user_file.txt', 'a+') as user_info:
-            hash_password = (hashlib.sha256(password.encode())).hexdigest()
-            user_info.write(f"\nUsername: {username} Password: {hash_password}\n")
-            print(f"{username} your username and password has been made.")
-            with open('user_list.txt', 'a+') as user_list_name:
-                user_list_name.write(username + ',')  # Append username to user_list
+        hash_password = hashlib.sha256(password.encode("utf8")).hexdigest()
+        obj_user = User(username, hash_password)
+        row_user_info = [[obj_user.username, obj_user.password]]  # dataframe is a nested list [[]]
+        try:
+            with open("user_information.csv", 'a', newline='') as csv_user_info:
+                csv_writer = csv.writer(csv_user_info)
+                csv_writer.writerows(row_user_info)  # writing the data row
+        except FileNotFoundError:
+            print('Error: File user_information.csv Not Found')
+        else:
+            print(f"{username.capitalize()} your username and password has been made.")
 
     @staticmethod
     def login(username):
         """
         This method allows the user to login as a manager or client by entering information.
-        # if username==admin then save in log ---> this should be handle in Phase2
+        # if username==admin then save in log  and alert for inventory zero ---> this should be handle in Phase3
         """
         count = 0
         success = False
         while count <= 3 and not success:
             password = input('Please enter your password:')
-            hash_password = (hashlib.sha256(password.encode())).hexdigest()
-            with open("user_file.txt", "r") as username_finder:
-                for line in username_finder:
-                    if ("Username: " + username + " Password: " + hash_password) == line.strip():
-                        print(f"{username} You are logged in system. now choose what you want.")
-                        success = True
+            hash_password = hashlib.sha256(password.encode("utf8")).hexdigest()
+            try:
+                with open("user_information.csv", "r") as csv_user_info:
+                    username_finder = csv.reader(csv_user_info)
+                    for line in username_finder:
+                        if line[0] == username and line[1] == hash_password:
+                            print(f"{username.capitalize()} You are logged in system. now choose what you want.")
+                            success = True
+                            break
+                    if not success:
+                        print("Sorry, this username or password does not exist please try again or register.")
+                        count += 1
+                    if count == 3:  # save in log in phase3
+                        logging.warning(f'{username} entered the wrong password 3 times')
+                        print("------------------- Note ---------------------------")
+                        print("You entered the wrong password 3 times."
+                              "You have been locked out please restart to try again.")
+                        sys.exit()
+            except FileNotFoundError:
+                print('Error: File user_information.csv Not Found')
+                break
+
+    @staticmethod
+    def change_password():
+        username = input("Please enter your Username for change_password:")
+        try:
+            df_user_info = pd.read_csv('user_information.csv')
+            location = 0
+            current_password = input("Enter Current password: ")
+            hash_current_password = hashlib.sha256(current_password.encode("utf8")).hexdigest()
+            with open('user_information.csv') as my_file:
+                csv_reader = csv.DictReader(my_file)
+                for row in csv_reader:
+                    if username == row['username'] and hash_current_password == row['password']:
+                        print("Your username and password are correct.")
+                        new_password = input("Enter New password: ")
+                        confirm_password = input("Enter New password confirmation: ")
+                        if new_password == confirm_password:
+                            hash_new_pass = hashlib.sha256(new_password.encode("utf8")).hexdigest()
+                            df_user_info.loc[location, 'password'] = hash_new_pass
+                            df_user_info.to_csv('user_information.csv', index=False)
+                            print("Your password was changed successfully.")
+                        else:
+                            print('Confirm password is not equal to New password.')
                         break
-                if not success:
-                    print("Sorry, this username or password does not exist please try again or register.")
-                    count += 1
-                if count == 3:  # save in log in phase2
-                    print("------------------- Note ---------------------------")
-                    print("You entered the wrong password 3 times."
-                          "You have been locked out please restart to try again.")
-                    sys.exit()
-
-    @classmethod
-    def get_user_list(cls):
-        with open('user_list.txt') as user_list:  # in this file all username is stored
-            user = user_list.read().split(',')
-        return user
-
-    def logging(self):
-        """
-        This method save logs user information. for Phase2
-        Log the following events:
-        Administrator login
-        New product definition
-        Issuance of a new invoice
-        Check out the product in stock
-        Errors and warnings
-        """
-        pass
+                    location += 1
+                else:
+                    print('Your username or password is incorrect.')
+        except FileNotFoundError:
+            print('Error: File user_information.csv Not Found')
