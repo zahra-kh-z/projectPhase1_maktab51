@@ -78,5 +78,10 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
+        elif choice == "4":
+            print("\n******  Goodbye ******")
+        else:
+            print("Invalid choice. Please try again.")
+
 
 main()

@@ -95,3 +95,11 @@ def check_inventory():
         for row in csv_reader:
             if int(row['inventory_number']) == 0:
                 print(f'Warning inventory is zero: product_id:{row["product_id"]} product_name:{row["product_name"]}')
+
+
+def check_inventory():
+    with open('product_list.csv') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        for row in csv_reader:
+            if int(row['inventory_number']) == 0:
+                print(f'Warning inventory is zero: product_id:{row["product_id"]} product_name:{row["product_name"]}')
