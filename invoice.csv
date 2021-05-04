@@ -1,0 +1,5 @@
+customer_name,price_invoice,buy_basket
+zahra,2440,"[{'product_id': '1', 'product_name': 'ipad', 'brand': 'apple', 'price': '1200 $', 'count_product': 2, 'total_price': 2400}, {'product_id': '5', 'product_name': 'book', 'brand': 'papco', 'price': '20 $', 'count_product': 2, 'total_price': 40}]"
+zahra,760,"[{'product_id': '3', 'product_name': 'TV', 'brand': 'LG', 'price': '600 $', 'count_product': 1, 'total_price': 600}, {'product_id': '6', 'product_name': 'laptop', 'brand': 'Dell', 'price': '80 $', 'count_product': 2, 'total_price': 160}]"
+sara,2440,"[{'product_id': '1', 'product_name': 'ipad', 'brand': 'apple', 'price': '1200 $', 'count_product': 2, 'total_price': 2400}, {'product_id': '5', 'product_name': 'book', 'brand': 'papco', 'price': '20 $', 'count_product': 2, 'total_price': 40}]"
+neda,660,"[{'product_id': '6', 'product_name': 'laptop', 'brand': 'Dell', 'price': '80 $', 'count_product': 2, 'total_price': 160}, {'product_id': '4', 'product_name': 'pen', 'brand': 'FaberCastel', 'price': '500 $', 'count_product': 1, 'total_price': 500}]"
