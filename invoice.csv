@@ -1,5 +1,10 @@
-customer_name,price_invoice,buy_basket
-zahra,2440,"[{'product_id': '1', 'product_name': 'ipad', 'brand': 'apple', 'price': '1200 $', 'count_product': 2, 'total_price': 2400}, {'product_id': '5', 'product_name': 'book', 'brand': 'papco', 'price': '20 $', 'count_product': 2, 'total_price': 40}]"
-zahra,760,"[{'product_id': '3', 'product_name': 'TV', 'brand': 'LG', 'price': '600 $', 'count_product': 1, 'total_price': 600}, {'product_id': '6', 'product_name': 'laptop', 'brand': 'Dell', 'price': '80 $', 'count_product': 2, 'total_price': 160}]"
-sara,2440,"[{'product_id': '1', 'product_name': 'ipad', 'brand': 'apple', 'price': '1200 $', 'count_product': 2, 'total_price': 2400}, {'product_id': '5', 'product_name': 'book', 'brand': 'papco', 'price': '20 $', 'count_product': 2, 'total_price': 40}]"
-neda,660,"[{'product_id': '6', 'product_name': 'laptop', 'brand': 'Dell', 'price': '80 $', 'count_product': 2, 'total_price': 160}, {'product_id': '4', 'product_name': 'pen', 'brand': 'FaberCastel', 'price': '500 $', 'count_product': 1, 'total_price': 500}]"
+customer_name,timestamp,price_invoice,buy_basket
+zahra,2021-05-13 18:30:29,660,"[{'product_name': 'pen', 'price': '500 $', 'count_product': 1, 'total_price': 500}, {'product_name': 'laptop', 'price': '80 $', 'count_product': 2, 'total_price': 160}]"
+zahra,2021-05-13 18:31:35,20,"[{'product_name': 'book', 'price': '20 $', 'count_product': 1, 'total_price': 20}]"
+sara,2021-05-13 18:35:40,456,"[{'product_name': 'tablet', 'price': '456 $', 'count_product': 1, 'total_price': 456}]"
+sara,2021-05-13 18:36:22,36,"[{'product_name': 'f', 'price': '4 $', 'count_product': 9, 'total_price': 36}]"
+neda,2021-05-13 18:49:06,600,"[{'product_name': 'TV', 'price': '600 $', 'count_product': 1, 'total_price': 600}]"
+neda,2021-05-13 19:22:04,80,"[{'product_name': 'laptop', 'price': '80 $', 'count_product': 1, 'total_price': 80}]"
+sara,2021-05-13 19:34:19,1240,"[{'product_name': 'laptop', 'price': '80 $', 'count_product': 3, 'total_price': 240}, {'product_name': 'pen', 'price': '500 $', 'count_product': 2, 'total_price': 1000}]"
+neda,2021-05-13 19:35:12,20,"[{'product_name': 'book', 'price': '20 $', 'count_product': 1, 'total_price': 20}]"
+sara,2021-05-14 00:44:50,40,"[{'product_name': 'book', 'price': '20 $', 'count_product': 2, 'total_price': 40}]"

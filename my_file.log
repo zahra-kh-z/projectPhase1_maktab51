@@ -1,0 +1,45 @@
+2021-05-13 18:24:08,265 - my_log - WARNING - Someone tried to register as an admin with an insecure password.
+2021-05-13 18:24:33,351 - my_log - INFO - Admin created successfully.
+2021-05-13 18:25:32,505 - my_log - WARNING - Someone tried to register as admin.
+2021-05-13 18:26:29,448 - my_log - ERROR - admin entered the wrong password 3 times.
+2021-05-13 18:26:40,756 - my_log - INFO - Admin logged in
+2021-05-13 18:27:06,582 - my_log - INFO - Admin add product ee
+2021-05-13 18:27:49,248 - my_log - INFO - Admin add product f
+2021-05-13 18:30:29,593 - my_log - INFO - send new invoice to customer_name: zahra
+2021-05-13 18:31:35,453 - my_log - INFO - send new invoice to customer_name: zahra
+2021-05-13 18:32:07,306 - my_log - ERROR - zahra entered the wrong password 3 times, zahra is Blocked.
+2021-05-13 18:33:33,919 - my_log - INFO - Admin logged in
+2021-05-13 18:33:48,372 - my_log - INFO - Admin activated customer_zahra
+2021-05-13 18:35:29,428 - my_log - WARNING - sara requested purchase from zero inventory.
+2021-05-13 18:35:40,199 - my_log - INFO - send new invoice to customer_name: sara
+2021-05-13 18:36:19,093 - my_log - WARNING - Inventory is empty for product_id:8
+2021-05-13 18:36:22,659 - my_log - INFO - send new invoice to customer_name: sara
+2021-05-13 18:39:17,805 - my_log - ERROR - neda entered the wrong password 3 times, neda is Blocked.
+2021-05-13 18:41:18,542 - my_log - INFO - Admin logged in
+2021-05-13 18:45:37,920 - my_log - INFO - Admin activated customer_neda
+2021-05-13 18:47:20,047 - my_log - INFO - Admin logged in
+2021-05-13 18:48:19,931 - my_log - INFO - Admin logged in
+2021-05-13 18:48:57,372 - my_log - WARNING - neda requested purchase from zero inventory.
+2021-05-13 18:49:06,951 - my_log - INFO - send new invoice to customer_name: neda
+2021-05-13 18:49:24,053 - my_log - ERROR - neda entered the wrong password 3 times, neda is Blocked.
+2021-05-13 18:49:44,448 - my_log - INFO - Admin logged in
+2021-05-13 18:50:04,089 - my_log - INFO - Admin activated customer_neda
+2021-05-13 19:15:39,310 - my_log - INFO - Admin logged in
+2021-05-13 19:21:58,265 - my_log - WARNING - neda requested purchase from zero inventory.
+2021-05-13 19:22:04,076 - my_log - INFO - send new invoice to customer_name: neda
+2021-05-13 19:34:19,205 - my_log - INFO - send new invoice to customer_name: sara
+2021-05-13 19:35:04,510 - my_log - WARNING - neda requested purchase from zero inventory.
+2021-05-13 19:35:12,481 - my_log - INFO - send new invoice to customer_name: neda
+2021-05-13 19:35:45,730 - my_log - INFO - Admin logged in
+2021-05-13 23:04:42,261 - my_log - INFO - Admin logged in
+2021-05-13 23:05:23,136 - my_log - INFO - Admin logged in
+2021-05-13 23:05:29,030 - my_log - WARNING - Admin delete product_id:8
+2021-05-13 23:06:02,666 - my_log - INFO - Admin logged in
+2021-05-13 23:08:09,844 - my_log - INFO - Admin logged in
+2021-05-13 23:08:45,540 - my_log - INFO - Admin logged in
+2021-05-13 23:08:57,876 - my_log - INFO - Admin add product ee
+2021-05-13 23:09:10,828 - my_log - WARNING - Admin delete product_id:8
+2021-05-13 23:21:52,495 - my_log - ERROR - neda entered the wrong password 3 times, neda is Blocked.
+2021-05-14 00:43:58,333 - my_log - INFO - Admin logged in
+2021-05-14 00:44:50,375 - my_log - INFO - send new invoice to customer_name: sara
+2021-05-14 00:45:06,828 - my_log - INFO - Admin logged in
