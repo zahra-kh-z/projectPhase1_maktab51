@@ -30,6 +30,8 @@ def main():
         choice = input("Please enter your choice:")
         if choice == "1":
             username = input("Please enter your Username for register:\n")
+            if not username:  # check that username is not empty
+                main()  # break loop if is empty
             if username in username_list:
                 if username == "admin":
                     print('You are not Admin. an admin is exist.')
@@ -54,6 +56,8 @@ def main():
 
         elif choice == "2":
             username = input('Please enter your name for login:')
+            if not username:  # check that username is not empty
+                main()  # break loop if is empty
             if username == 'admin':
                 user.User.login(username)
             else:
@@ -68,6 +72,8 @@ def main():
 
         elif choice == "3":
             username = input("Please enter your Username for change_password:")
+            if not username:  # check that username is not empty
+                main()  # break loop if is empty
             current_password = input("Enter Current password: ")
             new_password = input("Enter New password: ")
             confirm_password = input("Enter New password confirmation: ")
